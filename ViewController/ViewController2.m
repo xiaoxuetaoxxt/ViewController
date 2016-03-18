@@ -16,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake((self.view.frame.size.width-150)/2, 200, 150, 40)];
+    label.text = @"第2个ViewController";
+    label.textColor = [UIColor blackColor];
+     label.font = [UIFont systemFontOfSize:14];
+    [self.view addSubview:label];
     // Do any additional setup after loading the view.
 }
 
