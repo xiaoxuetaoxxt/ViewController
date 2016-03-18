@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-
+#import "ViewController3.h"
+#import "MainViewController.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
@@ -17,12 +18,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
+//    // Override point for customization after application launch.
+//    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+//    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+//    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+//    splitViewController.delegate = self;
+//    
+    
+    self.window = [[UIWindow alloc]initWithFrame: [[UIScreen mainScreen] bounds] ];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+   MainViewController *view = [[MainViewController alloc]init];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:view];
+    
+    self.window.rootViewController = nav;
+
+    [self.window makeKeyAndVisible];
+    
     return YES;
+
+    
+    
+   
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
